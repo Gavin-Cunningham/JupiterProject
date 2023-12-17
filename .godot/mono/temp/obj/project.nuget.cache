@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "rVguS44K/U3aCW6klvHjRQj98xfsxVjJ2PHDcZaHRYeSn4zrfxYqBImV26+VkEVecnhMpVpqouh07neMo5KMRw==",
+  "success": true,
+  "projectFilePath": "G:\\Project Folders\\JupiterProject\\JupiterProjectRepository\\JupiterProject\\Jupiter Project.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Philip - Workstation\\.nuget\\packages\\godot.sourcegenerators\\4.1.1\\godot.sourcegenerators.4.1.1.nupkg.sha512",
+    "C:\\Users\\Philip - Workstation\\.nuget\\packages\\godotsharp\\4.1.1\\godotsharp.4.1.1.nupkg.sha512",
+    "C:\\Users\\Philip - Workstation\\.nuget\\packages\\godotsharpeditor\\4.1.1\\godotsharpeditor.4.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}

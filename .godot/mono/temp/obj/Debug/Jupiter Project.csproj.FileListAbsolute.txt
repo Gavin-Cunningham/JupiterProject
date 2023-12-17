@@ -1,0 +1,17 @@
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\bin\Debug\Jupiter Project.deps.json
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\bin\Debug\Jupiter Project.runtimeconfig.json
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\bin\Debug\Jupiter Project.dll
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\bin\Debug\Jupiter Project.pdb
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\bin\Debug\GodotSharp.dll
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\obj\Debug\Jupiter Project.csproj.AssemblyReference.cache
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\obj\Debug\Jupiter Project.GeneratedMSBuildEditorConfig.editorconfig
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\obj\Debug\Jupiter Project.AssemblyInfoInputs.cache
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\obj\Debug\Jupiter Project.AssemblyInfo.cs
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\obj\Debug\Jupiter Project.csproj.CoreCompileInputs.cache
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\obj\Debug\Jupiter Project.csproj.CopyComplete
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\obj\Debug\Jupiter Project.dll
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\obj\Debug\refint\Jupiter Project.dll
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\obj\Debug\Jupiter Project.pdb
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\obj\Debug\Jupiter Project.genruntimeconfig.cache
+G:\Project Folders\JupiterProject\JupiterProjectRepository\JupiterProject\.godot\mono\temp\obj\Debug\ref\Jupiter Project.dll

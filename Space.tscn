@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bo38iemib0md6"]
+
+[ext_resource type="PackedScene" uid="uid://dh2nkbbbc83ue" path="res://PlayerShip.tscn" id="1_rqtgt"]
+[ext_resource type="PackedScene" uid="uid://cebrayif0oovb" path="res://PlayerUI.tscn" id="2_0ip2i"]
+[ext_resource type="PackedScene" uid="uid://c4476fyh3usuu" path="res://CameraTest.tscn" id="3_lrp04"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5sayi"]
+sky_top_color = Color(0.4, 0.466667, 0.564706, 1)
+sky_horizon_color = Color(0.602941, 0.622549, 0.65, 1)
+ground_bottom_color = Color(0.0117647, 0.0235294, 0.0352941, 1)
+ground_horizon_color = Color(0.602941, 0.622549, 0.65, 1)
+
+[sub_resource type="Sky" id="Sky_wy1em"]
+sky_material = SubResource("ProceduralSkyMaterial_5sayi")
+
+[sub_resource type="Environment" id="Environment_k47kb"]
+background_mode = 1
+sky = SubResource("Sky_wy1em")
+ambient_light_source = 2
+ambient_light_color = Color(0.054902, 0.054902, 0.054902, 1)
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k47kb")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Control" parent="." instance=ExtResource("2_0ip2i")]
+
+[node name="PlayerShip" parent="." node_paths=PackedStringArray("inputIndicator", "throttleIndicator", "labelXYZ") instance=ExtResource("1_rqtgt")]
+mass = 100.0
+linear_damp = 10.0
+rotationSensitivity = Vector3(1, 1, 0.01)
+inputIndicator = NodePath("../Control/CanvasLayer/Control/InputIndicator")
+throttleIndicator = NodePath("../Control/CanvasLayer/Control2/ThrottleIndicator")
+labelXYZ = NodePath("../Control/XYZ Label")
+
+[node name="twist_pivot" parent="." node_paths=PackedStringArray("viewTarget") instance=ExtResource("3_lrp04")]
+viewTarget = NodePath("../PlayerShip")
+
+[node name="pitch_pivot2" type="Node3D" parent="twist_pivot"]
+
+[node name="CameraTest" type="Camera3D" parent="twist_pivot/pitch_pivot2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 40)
+
+[editable path="Control"]

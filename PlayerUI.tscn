@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://cebrayif0oovb"]
+
+[ext_resource type="Texture2D" uid="uid://mkmairhsq6j7" path="res://icon.svg" id="1_1ikgl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 220.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InputIndicator" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("1_1ikgl")
+expand_mode = 1
+
+[node name="Control2" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 240.0
+offset_top = 20.0
+offset_right = 250.0
+offset_bottom = 220.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control2"]
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 200.0
+
+[node name="ThrottleIndicator" type="TextureRect" parent="CanvasLayer/Control2"]
+layout_mode = 0
+offset_top = 160.0
+offset_right = 10.0
+offset_bottom = 200.0
+texture = ExtResource("1_1ikgl")
+expand_mode = 1
+
+[node name="XYZ Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 20.0
+offset_right = 550.0
+offset_bottom = 220.0
+text = "X Rotation:
+Y Rotation:
+Z Rotation:"

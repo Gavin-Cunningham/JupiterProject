@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://dh2nkbbbc83ue"]
+
+[ext_resource type="Script" path="res://PlayerShip.cs" id="1_12j37"]
+[ext_resource type="Resource" uid="uid://dh85l7xyf87hq" path="res://ShipRollPID.tres" id="2_3uvmo"]
+[ext_resource type="Texture2D" uid="uid://d2oos3rc54erc" path="res://Flare_01.png" id="2_b3hw5"]
+[ext_resource type="PackedScene" uid="uid://cnanfy223eqcj" path="res://231019a_Spaceship.glb" id="2_mktsl"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wa6a2"]
+points = PackedVector3Array(0.707909, -0.185729, -2.86203, 0.707909, 0.131226, -2.86203, -3.72875, 0.44753, 1.0989, 2.76591, -1.29523, 2.52569, 6.09563, 2.03263, -0.801431, 6.09563, -0.661325, -1.11806, 2.76591, -1.29523, -2.54485, -3.56501, -0.276673, -1.01282, -3.72875, 0.44753, -1.11806, 1.97368, 0.764811, 2.52569, 3.71797, 1.87399, 1.25806, 6.09563, -0.661325, 1.0989, 4.26333, 0.147982, -2.51337, 3.71797, 1.87399, -1.27721, -3.07728, -0.409086, 0.979839, 0.707909, -0.185729, 2.84288, 4.44381, -0.00303639, 2.5185, 6.09563, 2.03263, 0.782275, 4.34327, -1.216, -2.27308, 4.34327, -1.216, 2.25392, -0.108872, -0.977147, -1.00064, -3.62329, -0.284869, 1.00641, 1.81683, 0.44753, 2.84288, 1.18146, 0.289867, -2.86203, -0.110283, -0.978823, 0.982723, 6.09563, 0.131226, -1.27721, 6.09563, 0.131226, 1.25806, 1.0246, -0.661325, -2.70344, 1.0246, -0.661325, 2.68429, 3.08458, 1.71568, -1.43581, 2.60905, 1.24008, 2.04991, 0.707909, 0.131226, 2.84288)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjd7k"]
+transparency = 1
+blend_mode = 1
+albedo_texture = ExtResource("2_b3hw5")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 16.0
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_enabled = true
+proximity_fade_distance = 5.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hfk8n"]
+emission_shape = 1
+emission_sphere_radius = 85.8
+gravity = Vector3(0, 0, 0)
+color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4pbn"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_dtvy2"]
+material = SubResource("StandardMaterial3D_g4pbn")
+
+[node name="PlayerShip" type="RigidBody3D" node_paths=PackedStringArray("playerShip")]
+axis_lock_angular_y = true
+mass = 400.0
+gravity_scale = 0.0
+script = ExtResource("1_12j37")
+playerShip = NodePath(".")
+ShipRollPID = ExtResource("2_3uvmo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1.68534e-07, 0, -3.85561, 0, 3.85561, 0, 3.85561, 0, -1.68534e-07, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_wa6a2")
+
+[node name="vfx_SpaceSpots" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -107.935)
+material_override = SubResource("StandardMaterial3D_rjd7k")
+amount = 20
+lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_hfk8n")
+draw_pass_1 = SubResource("QuadMesh_dtvy2")
+
+[node name="231019a_Spaceship" parent="." instance=ExtResource("2_mktsl")]
+
+[node name="Spaceship" parent="231019a_Spaceship" index="0"]
+transform = Transform3D(-1.68534e-07, 0, -3.85561, 0, 3.85561, 0, 3.85561, 0, -1.68534e-07, 0, 0, 0)
+
+[editable path="231019a_Spaceship"]
