@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Jupiter Project"
-run/main_scene="res://Space.tscn"
+run/main_scene="res://levels/Space.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://textures/icon.svg"
 
 [dotnet]
 

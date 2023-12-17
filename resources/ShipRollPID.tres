@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://dh85l7xyf87hq"]
 
-[ext_resource type="Script" path="res://PID.cs" id="1_bafs4"]
+[ext_resource type="Script" path="res://scripts/PID.cs" id="1_bafs4"]
 
 [resource]
 script = ExtResource("1_bafs4")
-proportionalGain = 0.5
+proportionalGain = 3.0
 integralGain = 0.5
 derivativeGain = 0.1
 integralSaturation = 1.0

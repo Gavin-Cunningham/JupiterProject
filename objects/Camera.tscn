@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://chw25byijhs87"]
 
-[ext_resource type="Script" path="res://Camera.cs" id="1_1enc1"]
+[ext_resource type="Script" path="res://scripts/Camera.cs" id="1_1enc1"]
 
 [node name="twist_pivot" type="Node3D" node_paths=PackedStringArray("_twistPivot", "_pitchPivot")]
 script = ExtResource("1_1enc1")

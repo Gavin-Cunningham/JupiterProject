@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bo38iemib0md6"]
 
-[ext_resource type="PackedScene" uid="uid://dh2nkbbbc83ue" path="res://PlayerShip.tscn" id="1_rqtgt"]
-[ext_resource type="PackedScene" uid="uid://cebrayif0oovb" path="res://PlayerUI.tscn" id="2_0ip2i"]
-[ext_resource type="PackedScene" uid="uid://chw25byijhs87" path="res://Camera.tscn" id="3_acohr"]
+[ext_resource type="PackedScene" uid="uid://dh2nkbbbc83ue" path="res://objects/PlayerShip.tscn" id="1_rqtgt"]
+[ext_resource type="PackedScene" uid="uid://cebrayif0oovb" path="res://interface/PlayerUI.tscn" id="2_0ip2i"]
+[ext_resource type="PackedScene" uid="uid://chw25byijhs87" path="res://objects/Camera.tscn" id="3_acohr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5sayi"]
 sky_top_color = Color(0.4, 0.466667, 0.564706, 1)
