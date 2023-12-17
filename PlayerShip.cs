@@ -37,7 +37,7 @@ public partial class PlayerShip : RigidBody3D
 
 		RotateObjectLocal(Vector3.Up, -input.X * (float)delta * rotationSensitivity.X);
 		RotateObjectLocal(Vector3.Right, -input.Y * (float)delta * rotationSensitivity.Y);
-        RotateObjectLocal(Vector3.Forward, ShipRollPID.Controller(delta, -Rotation.Z, 0.5f) * rotationSensitivity.Z);
+        RotateObjectLocal(Vector3.Forward, ShipRollPID.Controller(delta, -Rotation.Z, 0.0f) * rotationSensitivity.Z);
     }
 
     public override void _UnhandledInput(InputEvent @event)

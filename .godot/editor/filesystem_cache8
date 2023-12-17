@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702774233
+::res://::1702774708
 231019a_Spaceship.glb::PackedScene::5686095888090583949::1697772347::1702774185::1::::<><>::
 Camera.cs::CSharpScript::-1::1697998023::0::1::::<><>::
 Camera.tscn::PackedScene::3795247108857002350::1702770695::0::1::::<><>::res://Camera.cs
@@ -10,9 +10,10 @@ icon.svg::CompressedTexture2D::4370936142526308047::1702772942::1702774168::1:::
 PID.cs::CSharpScript::-1::1702770153::0::1::::<><>::
 PlayerShip.cs::CSharpScript::-1::1702770526::0::1::::<><>::
 PlayerShip.tscn::PackedScene::7707129388867749540::1702774185::0::1::::<><>::res://PlayerShip.cs<>uid://dh85l7xyf87hq
-PlayerUI.tscn::PackedScene::5056694581749412771::1702770695::0::1::::<><>::uid://mkmairhsq6j7::::res://icon.svg
+PlayerUI.tscn::PackedScene::5056694581749412771::1702770695::0::1::::<><>::uid://mkmairhsq6j7
+README.md::TextFile::-1::1702774636::0::1::::<><>::
 ShipRollPID.tres::Resource::7720551293321622550::1702770422::0::1::::<><>::res://PID.cs
-Space.tscn::PackedScene::3428885247848630541::1702774189::0::1::::<><>::uid://dh2nkbbbc83ue::::res://PlayerShip.tscn<>uid://cebrayif0oovb::::res://PlayerUI.tscn<>uid://c4476fyh3usuu::::res://CameraTest.tscn
+Space.tscn::PackedScene::3428885247848630541::1702774448::0::1::::<><>::uid://dh2nkbbbc83ue::::res://PlayerShip.tscn<>uid://cebrayif0oovb::::res://PlayerUI.tscn<>uid://c4476fyh3usuu::::res://CameraTest.tscn
 ::res://addons/::1702772970
 ::res://addons/MonoCustomResourceRegistry/::1702772970
 plugin.cfg::TextFile::-1::1702772970::0::1::::<><>::

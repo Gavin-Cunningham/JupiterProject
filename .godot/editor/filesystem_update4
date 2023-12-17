@@ -1,6 +1,1 @@
-res://addons/MonoCustomResourceRegistry/Plugin.cs
-res://Camera.cs
-res://CameraTest.cs
-res://PID.cs
-res://PlayerShip.cs
 res://Space.tscn
