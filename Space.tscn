@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dh2nkbbbc83ue" path="res://PlayerShip.tscn" id="1_rqtgt"]
 [ext_resource type="PackedScene" uid="uid://cebrayif0oovb" path="res://PlayerUI.tscn" id="2_0ip2i"]
-[ext_resource type="PackedScene" uid="uid://c4476fyh3usuu" path="res://CameraTest.tscn" id="3_lrp04"]
+[ext_resource type="PackedScene" uid="uid://chw25byijhs87" path="res://Camera.tscn" id="3_acohr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5sayi"]
 sky_top_color = Color(0.4, 0.466667, 0.564706, 1)
@@ -40,12 +40,7 @@ inputIndicator = NodePath("../Control/CanvasLayer/Control/InputIndicator")
 throttleIndicator = NodePath("../Control/CanvasLayer/Control2/ThrottleIndicator")
 labelXYZ = NodePath("../Control/XYZ Label")
 
-[node name="twist_pivot" parent="." node_paths=PackedStringArray("viewTarget") instance=ExtResource("3_lrp04")]
+[node name="twist_pivot" parent="." node_paths=PackedStringArray("viewTarget") instance=ExtResource("3_acohr")]
 viewTarget = NodePath("../PlayerShip")
-
-[node name="pitch_pivot2" type="Node3D" parent="twist_pivot"]
-
-[node name="CameraTest" type="Camera3D" parent="twist_pivot/pitch_pivot2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 40)
 
 [editable path="Control"]

@@ -1,1 +1,7 @@
+res://PlayerUI.tscn
+res://Camera.tscn
 res://Space.tscn
+res://addons/MonoCustomResourceRegistry/Plugin.cs
+res://Camera.cs
+res://PID.cs
+res://PlayerShip.cs
