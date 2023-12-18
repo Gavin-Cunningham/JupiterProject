@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Runtime.CompilerServices;
 
 public partial class Camera : Node3D
 {
@@ -7,8 +8,11 @@ public partial class Camera : Node3D
     private float twist_input = 0.0f;
     private float pitch_input = 0.0f;
 
+    private float cameraDistance = 40.0f;
+
     [Export] private Node3D _twistPivot = null;
     [Export] private Node3D _pitchPivot = null;
+    [Export] private Camera3D _camera = null;
     [Export] private Node3D viewTarget = null;
 
     public override void _Ready()
@@ -47,14 +51,41 @@ public partial class Camera : Node3D
 
     private void CheckMouseWheel(InputEvent theEvent)
     {
+        float cameraMinDistance = 10.0f;
+        float cameraMaxDistance = 750.0f;
+        float cameraDistanceChange = 0.0f;
+        //GD.Print("CheckMouseWheel has run");
         if (theEvent.IsActionPressed("zoomIn") && Input.MouseMode != Input.MouseModeEnum.Visible)
         {
-
+            //GD.Print("zoomIn");
+            //cameraDistance += Math.Clamp(cameraDistance + (cameraDistance / 10), cameraMinDistance, cameraMaxDistance);
+            if (_camera.Transform.Origin.Z < cameraMaxDistance)
+            {
+                cameraDistanceChange = (_camera.Transform.Origin.Z / 10);
+            }
+            else
+            {
+                //cameraDistanceChange = -(_camera.Transform.Origin.Z / 10);
+            }
         }
         else if(theEvent.IsActionPressed("zoomOut") && Input.MouseMode != Input.MouseModeEnum.Visible)
         {
+            //cameraDistance = Math.Clamp(cameraDistance - (cameraDistance / 10), cameraMinDistance, cameraMaxDistance);
+            //GD.Print("zoomOut");
+            if (_camera.Transform.Origin.Z > cameraMinDistance)
+            {
+                cameraDistanceChange = -(_camera.Transform.Origin.Z / 10);
+            }
+            else
+            {
+                //cameraDistanceChange = (_camera.Transform.Origin.Z / 10);
+            }
 
         }
+        //GD.Print("distance: " + cameraDistance);
+        GD.Print("Camera Position: " + _camera.Transform.Origin);
+        //_camera.TranslateObjectLocal(new Vector3 (0, ((_camera.Transform.Origin.Y - cameraDistance) / 4.0f), _camera.Transform.Origin.Z - cameraDistance));
+        _camera.TranslateObjectLocal(new Vector3 (0.0f, cameraDistanceChange / 4.0f, cameraDistanceChange));
     }
 
     private void GetMouseInput(InputEvent theEvent)

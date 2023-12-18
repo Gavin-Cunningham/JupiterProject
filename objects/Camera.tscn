@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/Camera.cs" id="1_1enc1"]
 
-[node name="twist_pivot" type="Node3D" node_paths=PackedStringArray("_twistPivot", "_pitchPivot")]
+[node name="twist_pivot" type="Node3D" node_paths=PackedStringArray("_twistPivot", "_pitchPivot", "_camera")]
 script = ExtResource("1_1enc1")
 _twistPivot = NodePath(".")
 _pitchPivot = NodePath("pitch_pivot")
+_camera = NodePath("pitch_pivot/Camera")
 
 [node name="pitch_pivot" type="Node3D" parent="."]
 
-[node name="CameraTest" type="Camera3D" parent="pitch_pivot"]
+[node name="Camera" type="Camera3D" parent="pitch_pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 40)

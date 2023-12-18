@@ -1,1 +1,7 @@
+res://addons/MonoCustomResourceRegistry/Plugin.cs
+res://scripts/Camera.cs
+res://scripts/PID.cs
+res://scripts/PlayerShip.cs
+res://objects/Camera.tscn
 res://levels/Space.tscn
+res://objects/PlayerShip.tscn

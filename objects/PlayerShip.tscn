@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dh2nkbbbc83ue"]
+[gd_scene load_steps=11 format=3 uid="uid://dh2nkbbbc83ue"]
 
 [ext_resource type="Script" path="res://scripts/PlayerShip.cs" id="1_12j37"]
 [ext_resource type="Resource" uid="uid://dh85l7xyf87hq" path="res://resources/ShipRollPID.tres" id="2_3uvmo"]
-[ext_resource type="Texture2D" uid="uid://d2oos3rc54erc" path="res://textures/Flare_01.png" id="2_b3hw5"]
 [ext_resource type="PackedScene" uid="uid://cnanfy223eqcj" path="res://models/231019a_Spaceship.glb" id="2_mktsl"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wa6a2"]
@@ -10,23 +9,32 @@ points = PackedVector3Array(0.707909, -0.185729, -2.86203, 0.707909, 0.131226, -
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjd7k"]
 transparency = 1
-blend_mode = 1
-albedo_texture = ExtResource("2_b3hw5")
 emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 16.0
+emission = Color(0.721569, 1, 1, 1)
+emission_energy_multiplier = 20.05
 billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
-proximity_fade_enabled = true
 proximity_fade_distance = 5.0
+distance_fade_mode = 3
+distance_fade_min_distance = 40.0
+distance_fade_max_distance = 100.0
+
+[sub_resource type="Gradient" id="Gradient_eqe3d"]
+offsets = PackedFloat32Array(0, 0.227642, 0.715447, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0.797871, 0, 0.128843, 1, 0, 0, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_67yc1"]
+gradient = SubResource("Gradient_eqe3d")
+use_hdr = true
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hfk8n"]
 emission_shape = 1
 emission_sphere_radius = 85.8
 gravity = Vector3(0, 0, 0)
-color = Color(1, 1, 1, 0)
+color = Color(0, 0, 1, 1)
+color_ramp = SubResource("GradientTexture1D_67yc1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4pbn"]
 
@@ -46,10 +54,13 @@ transform = Transform3D(-1.68534e-07, 0, -3.85561, 0, 3.85561, 0, 3.85561, 0, -1
 shape = SubResource("ConvexPolygonShape3D_wa6a2")
 
 [node name="vfx_SpaceSpots" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -107.935)
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, -107.935)
 material_override = SubResource("StandardMaterial3D_rjd7k")
-amount = 20
+visibility_range_fade_mode = 1
+amount = 200
 lifetime = 10.0
+explosiveness = 0.27
+fixed_fps = 120
 process_material = SubResource("ParticleProcessMaterial_hfk8n")
 draw_pass_1 = SubResource("QuadMesh_dtvy2")
 
