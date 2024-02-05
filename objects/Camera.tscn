@@ -12,3 +12,5 @@ _camera = NodePath("pitch_pivot/Camera")
 
 [node name="Camera" type="Camera3D" parent="pitch_pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 40)
+fov = 90.0
+far = 1e+06

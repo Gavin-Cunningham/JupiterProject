@@ -6,6 +6,7 @@ public partial class PlayerShip : RigidBody3D
     private Vector2 inputDampened = new Vector2(0.0f, 0.0f);
     [Export] private Vector3 rotationSensitivity = new Vector3(1, 1, 1);
     private float sublightThrottle = 0.0f;
+	private float warp = 1.0f;
 	[Export] Node3D playerShip;
 
     [ExportCategory("Indicators")]
@@ -19,7 +20,7 @@ public partial class PlayerShip : RigidBody3D
 	{
 		HandleShipRotation(delta);
 		UpdateXYZLabel();
-		ApplyCentralForce(-Transform.Basis.Z * sublightThrottle * 100000);
+		ApplyCentralForce((-Transform.Basis.Z * sublightThrottle * 200000) / warp);
     }
 
 	private void HandleShipRotation(double delta)
@@ -65,15 +66,27 @@ public partial class PlayerShip : RigidBody3D
 	{
 		if (@event.IsActionPressed("increaseSublightSpeed"))
 		{
-			sublightThrottle = Mathf.Clamp(sublightThrottle + 0.25f, 0.0f, 1.0f);
+			sublightThrottle = Mathf.Clamp(sublightThrottle + 0.20f, 0.0f, 5.0f);
             HandleThrottleIndicator(sublightThrottle);
         }
 
 		if (@event.IsActionPressed("decreaseSublightSpeed"))
 		{
-            sublightThrottle = Mathf.Clamp(sublightThrottle - 0.25f, 0.0f, 1.0f);
+            sublightThrottle = Mathf.Clamp(sublightThrottle - 0.20f, 0.0f, 5.0f);
 			HandleThrottleIndicator(sublightThrottle);
         }
+
+		if (@event.IsActionPressed("warpSpeed"))
+		{
+			if (warp == 1.0f)
+			{
+				warp = 0.02f;
+			}
+			else
+			{
+				warp = 1.0f;
+			}
+		}
 	}
 
 	private void HandleThrottleIndicator(float throttle)

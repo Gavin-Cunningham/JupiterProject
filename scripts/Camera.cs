@@ -83,7 +83,7 @@ public partial class Camera : Node3D
 
         }
         //GD.Print("distance: " + cameraDistance);
-        GD.Print("Camera Position: " + _camera.Transform.Origin);
+        //GD.Print("Camera Position: " + _camera.Transform.Origin);
         //_camera.TranslateObjectLocal(new Vector3 (0, ((_camera.Transform.Origin.Y - cameraDistance) / 4.0f), _camera.Transform.Origin.Z - cameraDistance));
         _camera.TranslateObjectLocal(new Vector3 (0.0f, cameraDistanceChange / 4.0f, cameraDistanceChange));
     }
